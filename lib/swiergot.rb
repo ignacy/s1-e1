@@ -1,0 +1,5 @@
+require 'net/http'
+require 'rubygems'
+require 'uri'
+require 'twitter'
+require 'swiergot/swiergot'
