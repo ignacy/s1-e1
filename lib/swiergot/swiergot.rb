@@ -5,4 +5,12 @@ class Swiergot < Struct.new(:user, :password)
     client = Twitter::Base.new(oauth)
     client.update(msg)
   end
+
+  def get_last_lokter_post
+    post = Nokogiri::HTML(open('http://lokter.pl/posts')).css('div.post-content').first
+    title = post.search("span").first.children.to_s
+    description = post.search("p")[2].children.to_s 
+    tweet("#{title} -- #{description}"[0..140])
+  end
+
 end

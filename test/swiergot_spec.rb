@@ -6,14 +6,16 @@ describe Swiergot do
       @bot = Swiergot.new("swiergot", "zombocom")
     end
 
-    it "should send messages" do
-      response = @bot.tweet("Hello from swiergot #{rand(10000)}")
-      response.to_s.should match(/Hello from swiergot \d*/)
-    end
+# I have no idea how should I test this..
 
-    it "should get latest post from lokter" do
+ #   it "should send messages" do
+ #     response = @bot.tweet("Hello from swiergot #{rand(10000)}")
+ #     response.to_s.should match(/Hello from swiergot \d*/)
+ #   end
 
-    end
+#    it "should get latest post from lokter" do
+#       @bot.get_last_lokter_post
+#    end
 
   end
 end
