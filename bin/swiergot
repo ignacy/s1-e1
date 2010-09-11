@@ -3,7 +3,7 @@ require File.dirname(__FILE__) + './lib/swiergot'
 
 if __FILE__ == $0
   begin
-    while true do
+    loop do
       @bot = Swiergot.new("swiergot", "zombocom")
       @bot.get_last_lokter_post
       puts "Tweeted.. waitning 10 minutes.."
