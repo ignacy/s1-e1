@@ -1,17 +1,18 @@
 #!/usr/bin/ruby
-require File.dirname(__FILE__) + './lib/swiergot'
+require File.dirname(__FILE__) + '/../lib/swiergot'
 
 if __FILE__ == $0
   begin
     loop do
       @bot = Swiergot.new("swiergot", "zombocom")
-      @bot.get_last_lokter_post
+      @bot.pull_from_feed
       puts "Tweeted.. waitning 10 minutes.."
       sleep(60*60*10) 
     end
   rescue Exception => e
-     puts "Exception: #{e.message}"
-     retry
+    puts "Exception: #{e.message}"
+    sleep(60*60*10) 
+    retry
   end
 end
 
